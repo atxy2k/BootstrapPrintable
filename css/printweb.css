@@ -1,0 +1,32 @@
+html {}
+body
+{
+    padding-top: 50px;
+    margin: 0;
+    background: #F4F2F3;
+}
+.print-container
+{
+    text-align: center;
+    margin: 50px auto;
+    width: 100%;
+}
+.print-page
+{
+    position: relative;
+    text-align: left;
+    background: #FFFFFF;
+    width: 216mm;
+    padding: 1cm;
+    display: block;
+    margin: 0 auto;
+}
+.print-container.landscape .print-page
+{
+    width: 279mm;
+    height: 216mm;
+}
+.table
+{
+    position: relative;
+}
