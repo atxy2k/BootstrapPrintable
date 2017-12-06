@@ -1,0 +1,71 @@
+@media screen
+{
+    .print-page
+    {
+        a.editable
+        {
+            position: relative;
+            span.editable-touch-icon
+            {
+                display: inline-block;
+                margin-left: 7px;
+                font-size: 10px;
+                top: -1px;
+            }
+        }
+    }
+    .Modal-settings
+    {
+        position: fixed;
+        box-shadow: 0 -3px 10px #b7b7b7;
+        top: 0;
+        right: -500px;
+        width: 500px;
+        z-index: 2000;
+        background-color: white;
+        height: 100vh;
+        transition: 0.4s all ease-out;
+        &.visible
+        {
+            transition: 0.4s all ease-out;
+            right: 0 ;
+        }
+        &-header
+        {
+            padding: 0.5em 1.5em;
+            min-height: 13vh;
+            max-height: 13vh;
+            a
+            {
+                float: right;
+                color: #b7b7b7;
+                &:hover
+                {
+                    text-shadow: 0 0 1px #b7b7b7;
+                }
+            }
+        }
+        &-content
+        {
+            padding: 0.5em 1.5em;
+            border: 1px solid red;
+            max-height: 75vh;
+            height: 75vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            &::-webkit-scrollbar
+            {
+                display: none; 
+            }
+        }
+        &-footer
+        {
+            padding: 0.5em 1.5em; 
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            min-height: 10vh;
+            max-height: 10vh;
+        }
+    }
+}
