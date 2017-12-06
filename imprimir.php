@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title><?php echo _('Imprimir') ?></title>
-
 	<link rel="stylesheet" href="<?php echo asset('/printable/css/bootstrap.css'); ?>" type="text/css" media="all">
 	<link rel="stylesheet" href="<?php echo asset('/printable/css/bootstrap-theme.css'); ?>" type="text/css" media="all">
 	<link rel="stylesheet" href="<?php echo asset('/printable/css/printweb.css'); ?>" type="text/css" media="screen">

@@ -1,0 +1,30 @@
+.new-line
+{
+    display: block;
+    width: 100%;
+}
+.new-line:before
+{
+    content: '\00a0';
+}
+.new-line:after
+{
+    content: '\00a0';
+}
+.chart
+{
+    min-height: 100px;
+}
+.print-block:before, .print-block:after
+{
+    content: " ";
+    display: table;
+}
+.print-block:after
+{
+    clear: both;
+}
+.table-striped
+{
+    /*-webkit-print-color-adjust: exact;*/
+}

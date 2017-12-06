@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Printable</title>
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/bootstrap-theme.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top no-print">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Ocultar</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    Bootstrap printable
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="margin-top: 3px;">
+                    <li>
+                        <p class="navbar-btn" >
+                            <a href="#" class="btn btn-default btn-sm">Back</a>
+                        </p>
+                    </li>
+                    <li style="margin-left: 10px;">
+                        <p class="navbar-btn">
+                            <a id="print-button" href="#" class="btn btn-primary btn-sm">Print</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="print-container">
+        
+        
+        <div class="print-page">
+            <div class="print-block">
+                <div class="clearfix">
+    
+                    <div class="text-center">
+                        <h3>
+                            hola que tal
+                        </h3>
+                    </div>
+    
+                </div>
+                <div class="new-line"></div>
+                <div class="clearfix">
+                    <h5>
+                        Saludo
+                    </h5>
+                </div>
+                <div class="new-line"></div>
+    
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script src="src/js/jquery-2.2.2.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+    <script src="dist/bundle.js"></script>
+</body>
+</html>
