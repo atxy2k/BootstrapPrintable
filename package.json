@@ -4,8 +4,8 @@
   "description": "Small library for html presentation as printview",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --watch-poll --colors",
-    "start": "npm run build && webpack-dev-server --progress --colors"
+    "build": "webpack --watch --colors",
+    "start": "webpack-dev-server --progress --colors"
   },
   "repository": {
     "type": "git",
