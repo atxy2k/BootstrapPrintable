@@ -1,13 +1,17 @@
 import $ from 'jQuery';
+import Component from './Component';
+import {isNull} from 'lodash';
 class FormManager
 {
 
-    constructor()
+    constructor( settings = {} )
     {
         let self = this;
+        let components = [];
         this.selectors = {
-            'modal'     : '.Modal-settings',
-            'handler'   : '.editable'
+            modal     : '.Modal-settings',
+            handler   : '.editable',
+            body      : '.print-page'
         };
         $(this.selectors.handler).on('click', function(evt)
         {
@@ -19,6 +23,14 @@ class FormManager
             if( 'preventDefault' in evt ) evt.preventDefault();
             if( 'stopPropagation' in evt ) evt.stopPropagation();
             $(self.selectors.modal).removeClass('visible');
+        });
+        $(this.selectors.handler).each(function(){
+            let component = new Component( $(this), settings );
+            component.build( $(self.selectors.modal).find('form') ).then(()=>{
+                components.push(component);
+            }, (err) => {
+                throw err;
+            });
         });
     }
 

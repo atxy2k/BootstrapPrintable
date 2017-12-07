@@ -25,6 +25,10 @@
         background-color: white;
         height: 100vh;
         transition: 0.4s all ease-out;
+        textarea
+        {
+            resize: none;
+        }
         &.visible
         {
             transition: 0.4s all ease-out;
@@ -48,7 +52,6 @@
         &-content
         {
             padding: 0.5em 1.5em;
-            border: 1px solid red;
             max-height: 75vh;
             height: 75vh;
             overflow-y: scroll;

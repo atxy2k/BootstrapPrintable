@@ -80,15 +80,13 @@
                     <a href="#" 
                         data-target-required="true"
                         data-target-name="place"
-                        data-target-default="{ id : 1, name : 'The Walt Disney Concert Hall', 'capacity' : 120  }"
+                        data-target-default='{ "id" : 1, "name" : "The Walt Disney Concert Hall", "capacity" : 120  }'
                         data-target-type="select-object"
                         data-target-label="Concert place"
-                        data-target-origin="[ 
-                        { id : 1, name : 'The Walt Disney Concert Hall', 'capacity' : 120 , 'presentation' : '2017-05-01' },
-                        { id : 2, name : 'Your house', 'capacity' : 15, 'presentation' : '2017-03-10'  },
-                        { id : 3, name : 'The central park', 'capacity' : 350, 'presentation' : '2015-10-04'  },
-                        { id : 4, name : 'Manhathan', 'capacity' : 78, 'presentation' : '2016-12-11'  },
-                        { id : 5, name : 'Campeche, México', 'capacity' : 120, 'presentation' : '2007-03-24'  }, ]" 
+                        data-target-origin-key="id"
+                        data-target-origin-value="name"
+                        data-target-origin='[ { "id" : 1, "name" : "The Walt Disney Concert Hall", "capacity" : 120 , "presentation" : "2017-05-01" }, { "id" : 2, "name" : "Your house", "capacity" : 15, "presentation" : "2017-03-10"  }, { "id" : 3, "name" : "The central park", "capacity" : 350, "presentation" : "2015-10-04"  },
+                        { "id" : 4, "name" : "Manhathan", "capacity" : 78, "presentation" : "2016-12-11"  }, { "id" : 5, "name" : "Campeche, México", "capacity" : 120, "presentation" : "2007-03-24"  } ]' 
                         class="editable">The Walt Disney Concert Hall</a>
                     . These comments were excerpted from audience iterviews we conducted that day.
                 </div>
@@ -118,16 +116,18 @@
                         data-target-default="Barbara Laonard"
                         data-target-type="select"
                         data-target-label="Sender"
-                        data-target-origin="Marco maldonado,Iván alvarado, Carlos pérez"
+                        data-target-origin="Marco maldonado,Iván alvarado, Carlos pérez, Barbara Laonard"
                         class="editable">Barbara Laonard</a></p>
                     <p>
                         <a href="#" 
                             data-target-required="true"
                             data-target-name="sender_position"
-                            data-target-default="4"
+                            data-target-default='{ "id" : 4 }'
                             data-target-type="select-ajax"
                             data-target-label="Position"
                             data-target-origin="/src/resources/positions.json"
+                            data-target-origin-key="id"
+                            data-target-origin-value="position"
                             class="editable">Artist Director, Education</a>
                     </p>
                     <p>The Music Center</p>
@@ -145,7 +145,7 @@
                 <h2>Settings <a href="#"><span class="glyphicon glyphicon-remove"></span></a></h2>
             </div>
             <div class="Modal-settings-content">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis dignissimos porro rerum libero exercitationem ex unde recusandae blanditiis impedit at obcaecati repudiandae tempora placeat ducimus totam, iusto, animi illum reprehenderit.</p>
+                
             </div>
             <div class="Modal-settings-footer">
                 <input type="submit" class="btn btn-primary btn-block" value="Update">
