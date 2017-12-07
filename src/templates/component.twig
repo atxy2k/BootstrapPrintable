@@ -14,26 +14,50 @@
     {% elseif type == 'date' %}
         <div class="row">
             <div class="col-md-4">
-                <select class="form-control" name="day">
+                <select class="form-control" 
+                    {% if required %}
+                        required
+                    {% endif %}
+                    name="{{name}}[day]" data-type="day">
                     <option value="">{{ options.lang.select_empty_option }}</option>
                     {% for i in options.date.days %}
-                        <option value="{{ i }}">{{ i }}</option>
+                        <option value="{{ i }}" 
+                            {% if i == default.day %} 
+                                selected
+                            {% endif %}
+                            >{{ i }}</option>
                     {% endfor %}
                 </select>
             </div>
             <div class="col-md-4">
-                <select class="form-control" name="month">
+                <select class="form-control" 
+                    {% if required %}
+                        required
+                    {% endif %}
+                    name="{{name}}[month]" data-type="month">
                     <option value="">{{ options.lang.select_empty_option }}</option>
                     {% for key,value in options.lang.months %}
-                        <option value="{{ key }}">{{ value }}</option>
+                        <option value="{{ key }}"
+                            {% if key == default.month %} 
+                                selected
+                            {% endif %}
+                            >{{ value }}</option>
                     {% endfor %}
                 </select>
             </div>
             <div class="col-md-4">
-                <select class="form-control" name="year">
+                <select class="form-control"
+                    {% if required %}
+                        required
+                    {% endif %}
+                     name="{{name}}[year]" data-type="year">
                     <option value="">{{ options.lang.select_empty_option }}</option>
                     {% for i in options.date.years %}
-                        <option value="{{ i }}">{{ i }}</option>
+                        <option value="{{ i }}"
+                            {% if i == default.year %} 
+                                selected
+                            {% endif %}
+                            >{{ i }}</option>
                     {% endfor %}
                 </select>
             </div>
