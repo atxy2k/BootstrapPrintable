@@ -22,6 +22,7 @@ module.exports = {
     {
         rules: 
         [
+            { test: /\.twig$/, loader: "twig-loader" },
             { 
                 test : /(\.js|.jsx)$/,
                 exclude : /(node_modules|bower_components)/,

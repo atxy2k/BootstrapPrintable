@@ -1,0 +1,22 @@
+{
+  "name": "bootstrap-printable",
+  "description": "Small library for html presentation as printview",
+  "main": "index.js",
+  "authors": [
+    "Mxrck@Atxy2k"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "print",
+    "printable",
+    "bootstrap"
+  ],
+  "homepage": "https://github.com/atxy2k/BootstrapPrintable",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

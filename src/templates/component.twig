@@ -1,0 +1,112 @@
+<div class="form-group">
+    <label for="{{ name }}">{{ label }}</label>
+    {% if type == 'text' %}
+        <input type="text" 
+            name="{{ name }}"
+            class="form-control" 
+            id="{{ name }}" 
+            placeholder="{{ default }}"
+            value="{{ default }}"
+            {% if required %}
+                required
+            {% endif %}
+            >
+    {% elseif type == 'date' %}
+        <div class="row">
+            <div class="col-md-4">
+                <select class="form-control" 
+                    {% if required %}
+                        required
+                    {% endif %}
+                    name="{{name}}[day]" data-type="day">
+                    <option value="">{{ options.lang.select_empty_option }}</option>
+                    {% for i in options.date.days %}
+                        <option value="{{ i }}" 
+                            {% if i == default.day %} 
+                                selected
+                            {% endif %}
+                            >{{ i }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select class="form-control" 
+                    {% if required %}
+                        required
+                    {% endif %}
+                    name="{{name}}[month]" data-type="month">
+                    <option value="">{{ options.lang.select_empty_option }}</option>
+                    {% for key,value in options.lang.months %}
+                        <option value="{{ key }}"
+                            {% if key == default.month %} 
+                                selected
+                            {% endif %}
+                            >{{ value }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select class="form-control"
+                    {% if required %}
+                        required
+                    {% endif %}
+                     name="{{name}}[year]" data-type="year">
+                    <option value="">{{ options.lang.select_empty_option }}</option>
+                    {% for i in options.date.years %}
+                        <option value="{{ i }}"
+                            {% if i == default.year %} 
+                                selected
+                            {% endif %}
+                            >{{ i }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+        </div>
+    {% elseif type == 'textarea' %}
+        <textarea
+                name="{{ name }}"
+                class="form-control" 
+                id="{{ name }}" 
+                placeholder="{{ default }}"
+                {% if required %}
+                    required
+                {% endif %}
+                >{{ default }}</textarea>
+    {% elseif type == 'select' %}
+        <select class="form-control" 
+            name="{{ name }}" id="{{ name }}" 
+            {% if required %}
+                required
+            {% endif %}
+            value="default">
+            <option value="">{{ options.lang.select_empty_option }}</option>
+            {% for item in origin %}
+                <option value="{{ item.key }}"
+                    {% if item.key == default %} 
+                        selected
+                    {% endif %}
+                    >{{ item.value }}</option>
+            {% endfor %}
+        </select>
+    {% elseif type == 'select-object' or type == 'select-ajax' %}
+        <select class="form-control" 
+            name="{{ name }}" id="{{ name }}" 
+            {% if required %}
+                required
+            {% endif %}
+            value="default">
+            <option value="">{{ options.lang.select_empty_option }}</option>
+            {% for item in origin %}
+                <option value="{{ item[origin_key] }}"
+                    {% if default!=null and item[origin_key] == default[origin_key] %} 
+                        selected
+                    {% endif %}
+                    >{{ item[origin_value] }}</option>
+            {% endfor %}
+        </select>
+    {% else %}
+    
+        {{ type }}
+    {% endif %}
+</div>
