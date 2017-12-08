@@ -152,13 +152,13 @@ class Component
         if( this.properties.type == 'text' )
         {
             this.$element.find('input[type=text]').on('keyup', function( evt ){
-                if( !isNull(self.options.options.onChange) ) self.options.options.onChange( self.properties.name, evt, $(this).val(), self.properties, self.$element );
+                if( !isEmpty(self.options.options.onChange) ) self.options.options.onChange( self.properties.name, evt, $(this).val(), self.properties, self.$element );
             });
         }
         else if( this.properties.type == 'textarea' )
         {
             this.$element.find('textarea').on('keyup', function( evt ){
-                if( !isNull(self.options.options.onChange) ) self.options.options.onChange( self.properties.name, evt, $(this).val(), self.properties, self.$element );
+                if( !isEmpty(self.options.options.onChange) ) self.options.options.onChange( self.properties.name, evt, $(this).val(), self.properties, self.$element );
             });
         }
         else if( this.properties.type == 'select'  )
@@ -168,7 +168,7 @@ class Component
                 let result = find(self.properties.origin, function(item){
                     return item.key === value;
                 });
-                if( !isNull(self.options.options.onChange) ) self.options.options.onChange( self.properties.name, evt, result, self.properties, self.$element );
+                if( !isEmpty(self.options.options.onChange) ) self.options.options.onChange( self.properties.name, evt, result, self.properties, self.$element );
             });
         }
         else if( this.properties.type == 'select-object' || this.properties.type == 'select-ajax' )
@@ -178,7 +178,7 @@ class Component
                 let result = find(self.properties.origin, function(item){
                     return item[self.properties.origin_key] == value;
                 });
-                if( !isNull(self.options.options.onChange) ) self.options.options.onChange( self.properties.name, evt, result, self.properties, self.$element );
+                if( !isEmpty(self.options.options.onChange) ) self.options.options.onChange( self.properties.name, evt, result, self.properties, self.$element );
             });
         }
         else if( this.properties.type == 'date' )
@@ -200,13 +200,13 @@ class Component
                 {
                     self.provisional_date.year = value <10 ? `0${value}` : ''+value;
                 }
-                if( (!isNull( self.provisional_date.day ) && !isNull( self.provisional_date.month ) && !isNull( self.provisional_date.year )) && (!isEmpty( self.provisional_date.day ) && !isEmpty( self.provisional_date.month ) && !isEmpty( self.provisional_date.year )) )
+                if( (!isEmpty( self.provisional_date.day ) && !isEmpty( self.provisional_date.month ) && !isEmpty( self.provisional_date.year )) && (!isEmpty( self.provisional_date.day ) && !isEmpty( self.provisional_date.month ) && !isEmpty( self.provisional_date.year )) )
                 {
                     let dateString = `${self.provisional_date.year}-${self.provisional_date.month}-${self.provisional_date.day}`;
                     let result = moment(dateString);
                     if( result.isValid() )
                     {
-                        if( !isNull(self.options.options.onChange) ) self.options.options.onChange( self.properties.name, evt, result, self.properties, self.$element );
+                        if( !isEmpty(self.options.options.onChange) ) self.options.options.onChange( self.properties.name, evt, result, self.properties, self.$element );
                     }
                 }
             });
