@@ -43894,11 +43894,11 @@ function () {
 
       if (this.properties.type == 'text') {
         this.$element.find('input[type=text]').on('keyup', function (evt) {
-          if (!(0, _lodash.isNull)(self.options.options.onChange)) self.options.options.onChange(self.properties.name, evt, (0, _jQuery.default)(this).val(), self.properties, self.$element);
+          if (!(0, _lodash.isEmpty)(self.options.options.onChange)) self.options.options.onChange(self.properties.name, evt, (0, _jQuery.default)(this).val(), self.properties, self.$element);
         });
       } else if (this.properties.type == 'textarea') {
         this.$element.find('textarea').on('keyup', function (evt) {
-          if (!(0, _lodash.isNull)(self.options.options.onChange)) self.options.options.onChange(self.properties.name, evt, (0, _jQuery.default)(this).val(), self.properties, self.$element);
+          if (!(0, _lodash.isEmpty)(self.options.options.onChange)) self.options.options.onChange(self.properties.name, evt, (0, _jQuery.default)(this).val(), self.properties, self.$element);
         });
       } else if (this.properties.type == 'select') {
         this.$element.find('select').on('change', function (evt) {
@@ -43906,7 +43906,7 @@ function () {
           var result = (0, _lodash.find)(self.properties.origin, function (item) {
             return item.key === value;
           });
-          if (!(0, _lodash.isNull)(self.options.options.onChange)) self.options.options.onChange(self.properties.name, evt, result, self.properties, self.$element);
+          if (!(0, _lodash.isEmpty)(self.options.options.onChange)) self.options.options.onChange(self.properties.name, evt, result, self.properties, self.$element);
         });
       } else if (this.properties.type == 'select-object' || this.properties.type == 'select-ajax') {
         this.$element.find('select').on('change', function (evt) {
@@ -43914,7 +43914,7 @@ function () {
           var result = (0, _lodash.find)(self.properties.origin, function (item) {
             return item[self.properties.origin_key] == value;
           });
-          if (!(0, _lodash.isNull)(self.options.options.onChange)) self.options.options.onChange(self.properties.name, evt, result, self.properties, self.$element);
+          if (!(0, _lodash.isEmpty)(self.options.options.onChange)) self.options.options.onChange(self.properties.name, evt, result, self.properties, self.$element);
         });
       } else if (this.properties.type == 'date') {
         this.$element.find('select').on('change', function (evt) {
@@ -43930,12 +43930,12 @@ function () {
             self.provisional_date.year = value < 10 ? "0".concat(value) : '' + value;
           }
 
-          if (!(0, _lodash.isNull)(self.provisional_date.day) && !(0, _lodash.isNull)(self.provisional_date.month) && !(0, _lodash.isNull)(self.provisional_date.year) && !(0, _lodash.isEmpty)(self.provisional_date.day) && !(0, _lodash.isEmpty)(self.provisional_date.month) && !(0, _lodash.isEmpty)(self.provisional_date.year)) {
+          if (!(0, _lodash.isEmpty)(self.provisional_date.day) && !(0, _lodash.isEmpty)(self.provisional_date.month) && !(0, _lodash.isEmpty)(self.provisional_date.year) && !(0, _lodash.isEmpty)(self.provisional_date.day) && !(0, _lodash.isEmpty)(self.provisional_date.month) && !(0, _lodash.isEmpty)(self.provisional_date.year)) {
             var dateString = "".concat(self.provisional_date.year, "-").concat(self.provisional_date.month, "-").concat(self.provisional_date.day);
             var result = (0, _moment.default)(dateString);
 
             if (result.isValid()) {
-              if (!(0, _lodash.isNull)(self.options.options.onChange)) self.options.options.onChange(self.properties.name, evt, result, self.properties, self.$element);
+              if (!(0, _lodash.isEmpty)(self.options.options.onChange)) self.options.options.onChange(self.properties.name, evt, result, self.properties, self.$element);
             }
           }
         });
